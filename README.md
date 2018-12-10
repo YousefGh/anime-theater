@@ -1,4 +1,4 @@
-# anime-theater
+# anime-theater: E-Commerce Website
 Mentionable Features:
 
    * Register/Login (Authentication / session)
