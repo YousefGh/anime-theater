@@ -1,0 +1,60 @@
+<div class="product-big-title-area">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                         <h2>Sign Up</h2>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+
+
+<div class="single-product-area">
+     <div class="zigzag-bottom"></div>
+
+     <div class="row" >
+          <div class="col-sm-3 col-md-3"></div>
+          <div class="col-sm-6 col-md-6">
+               {{#if hasErrors}} 
+                    {{#each messages}}
+                         <center>
+                              <div class="alert-message alert-message-danger">
+                                   <h4>{{ this }}</h4>
+                              </div>
+                         </center>
+                    {{/each}}
+               {{/if}}
+               <form action="/signup" method="post">
+                    <div class="form-group">
+                         <label for="name">Name</label>
+                         <input name="name" type="name" class="form-control" id="name" placeholder="Enter Name">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="email">Email address</label>
+                         <input name="email" type="email" class="form-control" id="email" placeholder="Enter E-mail">
+                         <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group">
+                         <label for="phoneNumber">Phone Number</label>
+                         <input name="phoneNumber" type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+                         <small id="email" class="form-text text-muted">just for verifying purchases.</small>
+                    </div>
+
+                    <div class="form-group">
+                         <label for="password">Password</label>
+                         <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+
+                    <input type="hidden" name="_csrf" value="{{ csrfToken }}"></input>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+               </form>
+          </div>
+          <div class="col-sm-3 col-md-3"></div>
+     </div>
+</div>

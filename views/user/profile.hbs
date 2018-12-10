@@ -1,0 +1,155 @@
+<div class="product-big-title-area">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                         <h2>Profile</h2>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+
+
+
+
+
+
+<!-- Main Content -->
+<div class="content margin-top60 margin-bottom60">
+     <div class="container">
+          <div class="row">
+               <!-- Left Section -->
+               <div class="col-sm-9 col-md-9 col-lg-9">
+                    <div class="my-account margin-top">
+                         <div class="row">
+                              <div class="col-sm-6 col-md-6">
+                                   <form method="POST">
+
+                                   </form>
+                                   <div class="title-box">
+                                        <h3>Account Information</h3>
+                                   </div>
+                                   <ul class="list-unstyled">
+                                        <li>
+                                             <div class="form-group">
+                                                  <label for="fname">First Name
+                                                  </label>
+                                                  <input type="text" name="fname" id="fname" class="form-control" placeholder="{{ user.name }}">
+                                             </div>
+                                             <div class="form-group">
+                                                  <label for="phoneNumber">Phone Number
+                                                  </label>
+                                                  <input type="text" name="phoneNumber" id="lname" class="form-control" placeholder="{{ user.phoneNumber }}">
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <div class="form-group">
+                                                  <label for="emailAddress">Email Address
+                                                  </label>
+                                                  <input type="email" name="email" id="emailAddress" class="form-control" placeholder="{{ user.email }}">
+                                             </div>
+                                        </li>
+                                   </ul>
+                              </div>
+                              <div class="col-sm-6 col-md-6">
+                                   <div class="title-box">
+                                        <h3>Change Password</h3>
+                                   </div>
+                                   <ul class="list-unstyled">
+                                        <li>
+                                             <div class="form-group">
+                                                  <label for="cpassword">Current Password
+                                                  </label>
+                                                  <input type="password" name="cpassword" id="cpassword" class="form-control">
+                                             </div>
+                                             <div class="form-group">
+                                                  <label for="npassword">New Password
+                                                  </label>
+                                                  <input type="password" name="npassword" id="npassword" class="form-control">
+                                             </div>
+                                        </li>
+                                        <li>
+                                             <div class="form-group">
+                                                  <label for="cnewpassword">Confirm New Password
+                                                  </label>
+                                                  <input type="password" name="cnewpassword" id="cnewpassword" class="form-control">
+                                             </div>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </div>
+                         <div class="buttons-box clearfix">
+                              <input type="submit" value="Save" class="button">
+                         </div>
+                    </div>
+               </div>
+               <!-- /Left Section -->
+               <!-- Sidebar -->
+               <div id="sidebar" class="sidebar col-sm-3 col-md-3 col-lg-3">
+                    <div class="widget">
+                         <h3>My Account</h3>
+                         <!-- menu-->
+                         <div id="sidebar-nav">
+                              <ul class="sidebar-nav">
+                                   <li class="active">
+                                        <a href="my-account-information.html">
+                                             <i class="fa fa-user item-icon"></i>Account Information</a>
+                                   </li>
+                                   <li>
+                                        <a href="my-orders.html">
+                                             <i class="fa fa-shopping-cart item-icon"></i>My Orders</a>
+                                   </li>
+                              </ul>
+                         </div>
+                         <!-- /menu-->
+                    </div>
+               </div>
+               <!-- /Sidebar -->
+          </div>
+     </div>
+</div>
+<!-- /Main Content -->
+
+
+
+
+
+
+
+<div class="single-product-area">
+     <div class="zigzag-bottom"></div>
+     <div class="row">
+          <div class="col-md-8 mx-auto">
+               <h2>My orders:</h2>
+
+               {{#each orders }}
+               <div class="panel panel-default">
+                    <div class="panel-body">
+                         {{#each this.items}}
+                         <ul class="list-group">
+                              <li class="list-group-item">
+
+                                   <td class="product-thumbnail">
+                                        <a href="single-product.html">
+                                             <img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="{{ this.item.imagePath }}">
+                                        </a>
+                                   </td>
+
+                                   <span class="badge badge-secondary badge-pill">${{this.price}}</span>
+
+                                   <span>
+                                        <h4>{{this.item.title}} | {{this.qty}} Units</h4>
+                                   </span>
+
+                              </li>
+                         </ul>
+                         {{/each}}
+                    </div>
+                    <div class="panel-footer" style="font-weight: bold">$ {{ this.cart.totalPrice }}</div>
+               </div>
+               {{/each}}
+          </div>
+     </div>
+</div>
